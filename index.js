@@ -18,20 +18,26 @@ document.getElementById("ajouter").addEventListener("click", function(e) {
     li.appendChild(button);
     ul.appendChild(li);
 });
+
 // Annuler
 document.getElementById("modifier1").addEventListener("click", function(evt) {
     evt.preventDefault()
-        //console.log('hello');
-    const nom = document.getElementById("nom")
-    const prenom = document.getElementById("prenom")
-    const nomStocker = nom.value.trim();
-    const prenomStocker = prenom.value;
+
+    const li = document.getElementById("li1")
+    const arr = li.innerHTML.split(' ')
+    console.log(li.innerHTML);
     const newButton = document.createElement("button");
     newButton.textContent = "Annuler";
     const form = document.getElementById("form");
     form.appendChild(newButton);
     //return to these places    
-    document.getElementById("nom").value = nomStocker;
-    console.log('nomStocker', nomStocker);
-    document.getElementById("prenom").value = prenomStocker;
+    document.getElementById("nom").value = arr[1];
+    document.getElementById("prenom").value = arr[0];
+    // change textContent for button 
+    const myButton = document.getElementById("ajouter")
+    myButton.innerHTML = "Modifier";
+    // modify the content of li
+    const Modifier1 = document.getElementById("modifier1");
+    const nom = document.getElementById("nom")
+    const prenom = document.getElementById("prenom")
 })
