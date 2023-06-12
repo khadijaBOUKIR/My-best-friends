@@ -40,4 +40,19 @@ document.getElementById("modifier1").addEventListener("click", function(evt) {
     const Modifier1 = document.getElementById("modifier1");
     const nom = document.getElementById("nom")
     const prenom = document.getElementById("prenom")
+
+    li.textContent = `${prenomStocker} ${nomStocker}`;
+
 })
+document.getElementById("modifier1").addEventListener("click", function() {
+    const li = document.getElementById("li1");
+    const input = document.getElementById("input1");
+
+    // Get the new content from the input field
+    const newContent = input.value;
+
+    // Update the content of the <li> element
+    li.textContent = newContent;
+
+    // Clear the input field
+    input.value = "";
